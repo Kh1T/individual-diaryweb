@@ -3,9 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Diary Web</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="icon" type="icon" href="./assets/logo/logo.png" />
 </head>
 <body>
-    
+    <!-- Header -->
+    <section class="header-container ">
+        <div class="header__logo"></div>
+        <h3 class="header__text">Logo Name</h3>
+    </section>
+
+    <div class="main-container">
+        <div class="group-container ">
+                <div class="group__sidebar ">
+                    <div class="sidebar__item">Home</div>
+                    <div class="sidebar__item">List</div>
+                    <div class="sidebar__item">View & Delete</div>
+                    <div class="sidebar__item">Create</div>
+                    <div class="sidebar__item">Edit</div>
+                </div>   
+        </div>
+
+        <div class="form-container">
+            <div class="welcome-container ">
+                <h1 class="welcome__text">Welcome to the Diary Web :<a class="logo-text">]</a></h1>
+        </div>
+        
+            <div id='create-note' class="create-note-container" >
+              <form id="note-form" class = "form__note">
+                <input class="note__title" id="title" placeholder="Title..." required>
+                
+                <input class="note__date" id="date" type="date" required>
+                <textarea class="note__description" id="description" placeholder="Add description..." required></textarea>
+                <input  class="btn-addnote" type="submit" value="Add Note">
+                <button id="add-button" class="btn-add">Add</button>
+                </div>
+                <div class="overview-container">
+                    <h3 class="overview__text">Overview</h3>
+                </div>
+                <div id='note-container' class="note-container"></div>
+        </div>
+    </div>
+
+    <section class="footer-container">
+    </section>
+    <script defer src="./scripts/index.js"></script>
 </body>
 </html>
