@@ -6,6 +6,7 @@
     <title>Diary Web</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="icon" type="icon" href="./assets/logo/logo.png" />
+    
 </head>
 <body>
     <!-- Header -->
@@ -17,37 +18,48 @@
     <div class="main-container">
         <div class="group-container ">
                 <div class="group__sidebar ">
-                    <div class="sidebar__item">Home</div>
-                    <div class="sidebar__item">List</div>
-                    <div class="sidebar__item">View & Delete</div>
-                    <div class="sidebar__item">Create</div>
-                    <div class="sidebar__item">Edit</div>
+                    <li class="sidebar__item">Home</li>
+                    <li class="sidebar__item">List</li>
+                    <li class="sidebar__item">View & Delete</li>
+                    <li class="sidebar__item">Create</li>
+                    <li class="sidebar__item">Edit</li>
                 </div>   
         </div>
 
         <div class="form-container">
-            <div class="welcome-container ">
-                <h1 class="welcome__text">Welcome to the Diary Web :<a class="logo-text">]</a></h1>
-        </div>
-        
-            <div id='create-note' class="create-note-container" >
-              <form id="note-form" class = "form__note">
-                <input class="note__title" id="title" placeholder="Title..." required>
+            <div >
                 
-                <input class="note__date" id="date" type="date" required>
-                <textarea class="note__description" id="description" placeholder="Add description..." required></textarea>
-                <input  class="btn-addnote" type="submit" value="Add Note">
-                <button id="add-button" class="btn-add">Add</button>
-                </div>
+                    <div class="welcome-container ">
+                        <h1 class="welcome__text">Welcome to the Diary Web :<a class="logo-text">]</a></h1>
+                    </div>
+                
+                    <div class="test">
+                        <div id='create-note' class="create-note-container" >
+                          <form id="note-form" class = "form__note">
+                            <input class="note__title" id="title" placeholder="Title..." required>
+                            <input class="note__date" id="date" type="date" required>
+                            <textarea class="note__description" id="description" placeholder="Add description..." required></textarea>
+                            <input  class="btn-addnote" type="submit" value="Add Note">
+                            <!-- <button id="add-button" class="btn-add">Add</button> -->
+                        </div>
+                        <div class="image-container">
+                        <img class="image__size" src="./assets/images/pic-1.jpeg"/>
+                        </div>
+                    </div>
+
+                
+                
+            </div>
+
                 <div class="overview-container">
                     <h3 class="overview__text">Overview</h3>
                 </div>
-                <div id='note-container' class="note-container"></div>
+            <div id='note-container' class="note-container"></div>
         </div>
     </div>
 
-    <section class="footer-container">
-    </section>
+    <footer-component></footer-component>
     <script defer src="./scripts/index.js"></script>
+    <script defer src = "scripts/script.js" type="module"></script>
 </body>
 </html>

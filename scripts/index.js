@@ -1,3 +1,12 @@
+/**
+ * @type {HTMLElement} noteContainer - The container element for the notes.
+ * @type {HTMLFormElement} noteForm - The form element for creating/editing notes.
+ * @type {HTMLInputElement} titleInput - The input element for the note title.
+ * @type {HTMLInputElement} dateInput - The input element for the note date.
+ * @type {HTMLInputElement} descriptionInput - The input element for the note description.
+ * @type {HTMLElement} createNote - The container element for the note form.
+ * @type {HTMLButtonElement} addButton - The button element to toggle the note form.
+ */
 const noteContainer = document.querySelector("#note-container");
 const noteForm = document.querySelector("#note-form");
 const titleInput = noteForm.querySelector(".note__title");
@@ -6,10 +15,22 @@ const descriptionInput = noteForm.querySelector(".note__description");
 const createNote = document.querySelector("#create-note");
 const addButton = document.querySelector("#add-button");
 
+// Initialize notes array to store the list of notes
 let notes = [];
+
+// Initialize a flag to track edit mode status
 let editMode = false;
+
+// Initialize a variable to store the ID of the note being edited
 let editNoteId = null;
 
+/**
+ * Function to truncate the description to a specified word limit.
+ *
+ * @param {string} description - The full description of the note.
+ * @param {number} wordLimit - The maximum number of words allowed in the truncated description.
+ * @returns {string} - The truncated description with an ellipsis if it exceeds the word limit.
+ */
 function truncateDescription(description, wordLimit) {
   const words = description.split(" ");
   if (words.length > wordLimit) {
@@ -19,15 +40,29 @@ function truncateDescription(description, wordLimit) {
 }
 
 // Load note data from localStorage on page load
+/**
+ * Retrieve stored notes from localStorage.
+ * If notes are found, parse the JSON string into an array.
+ * If no notes are found, initialize an empty array.
+ */
 const storedNotes = localStorage.getItem("notes");
 notes = storedNotes ? JSON.parse(storedNotes) : [];
 
-// Function to render notes in the UI
+
+/**
+ * Function to render notes in the UI.
+ */
 function renderNotes() {
+  // Clear the existing content in the note container
   noteContainer.innerHTML = "";
-  const sortedNotes = [...notes].reverse(); // Create a reversed copy of the notes array
+
+  // Create a reversed copy of the notes array to display the most recent notes first
+  const sortedNotes = [...notes].reverse();
+  // Iterate over each note in the sorted array
   sortedNotes.forEach(function (note) {
+    // Truncate the note description to a specified length
     const truncatedDescription = truncateDescription(note.description, 60);
+    // Add the note's HTML structure to the note container
     noteContainer.innerHTML += `
     <div class="note__wrapper">
         <div class="note__info">
@@ -49,14 +84,18 @@ function renderNotes() {
 // Render existing notes on page load
 renderNotes();
 
-addButton.addEventListener("click", (e) => {
-  createNote.classList.toggle("hidden");
-  addButton.innerHTML = createNote.classList.contains("hidden")
-    ? "Add"
-    : "Close";
-});
+// addButton.addEventListener("click", (e) => {
+//   createNote.classList.toggle("hidden");
+//   addButton.innerHTML = createNote.classList.contains("hidden")
+//     ? "Add"
+//     : "Close";
+// });
 
 // Event listener for form submission to add or edit a note
+/**
+ * Event listener for form submission to add or edit a note.
+ * @param {Event} e - The event object.
+ */
 noteForm.addEventListener("submit", (e) => {
   e.preventDefault(); // Prevent default form submission behavior
 
@@ -84,7 +123,12 @@ noteForm.addEventListener("submit", (e) => {
   noteForm.reset(); // Clear form inputs
 });
 
+
 // Event delegation for handling delete and edit button clicks
+/**
+ * Event listener for handling delete and edit button clicks.
+ * @param {MouseEvent} e - The event object.
+ */
 noteContainer.addEventListener("click", (e) => {
   const target = e.target;
   const action = target.classList.contains("note__delete")
@@ -116,17 +160,5 @@ noteContainer.addEventListener("click", (e) => {
   }
 });
 
-// Set the current date if the date input is empty
-function setCurrentDateIfEmpty() {
-  if (!dateInput.value) {
-    const currentDate = new Date();
-    const dateString = currentDate.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-    dateInput.value = dateString;
-  }
-}
+
+
