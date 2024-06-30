@@ -1,3 +1,4 @@
+
 /**
  * @type {HTMLElement} noteContainer - The container element for the notes.
  * @type {HTMLFormElement} noteForm - The form element for creating/editing notes.
@@ -14,9 +15,6 @@ const dateInput = noteForm.querySelector(".note__date");
 const descriptionInput = noteForm.querySelector(".note__description");
 const createNote = document.querySelector("#create-note");
 const addButton = document.querySelector("#add-button");
-
-// Initialize notes array to store the list of notes
-let notes = [];
 
 // Initialize a flag to track edit mode status
 let editMode = false;
@@ -39,6 +37,13 @@ function truncateDescription(description, wordLimit) {
   return description;
 }
 
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
 // Load note data from localStorage on page load
 /**
  * Retrieve stored notes from localStorage.
@@ -46,7 +51,7 @@ function truncateDescription(description, wordLimit) {
  * If no notes are found, initialize an empty array.
  */
 const storedNotes = localStorage.getItem("notes");
-notes = storedNotes ? JSON.parse(storedNotes) : [];
+let notes = storedNotes ? JSON.parse(storedNotes) : [];
 
 
 /**
@@ -78,6 +83,13 @@ function renderNotes() {
         </div>
     </div>
     `;
+  });
+  // Add event listeners to the edit buttons
+  document.querySelectorAll(".note__edit").forEach(function (button) {
+    button.addEventListener("click", function () {
+      scrollToTop();
+      // Additional logic for editing can be added here
+    });
   });
 }
 
