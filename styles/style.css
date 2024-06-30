@@ -1,0 +1,100 @@
+@import url(./components-styles/header.css);
+@import url(./components-styles/footer.css);
+
+@import url(./components-styles/note.css);
+@import url(./components-styles/side-bar.css);
+@import url(./components-styles/form.css);
+@import url(./components-styles/button.css);
+
+:root {
+    --primary-color : #DC2626;
+}
+
+body {
+    font-family:  Helvetica;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F7;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+}
+li {
+    list-style-type: none;
+    margin: 0;
+}
+
+.logo-text {
+    color: #DC2626; 
+}
+
+.main-container{
+        display: flex;
+        }
+
+	@media (min-width: 768px) { 
+        .main-container{
+            display: grid;
+            grid-template-columns: repeat(9, minmax(0, 1fr));
+            }
+     }
+
+.welcome-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem; /* 32px */
+    padding-bottom: 2rem; /* 32px */
+}
+
+.welcome__text {
+    font-size: 36px;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.overview-container {
+    max-width: 1024px;
+    display: flex;
+    text-align: left;
+    padding-top: 1.25rem;
+    align-self: flex-start;
+    padding-left: 16px;
+}
+.overview__text {
+    font-size: 1.875rem; /* 30px */
+    font-weight: 700;
+    margin-left: 0.25rem; /* 4px */
+    margin-right: 0.25rem; /* 4px */
+}
+
+.container-notebtn{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 0.5rem;
+}
+
+.group-container {
+    display: grid;
+    border-radius: 2px;
+    grid-column: span 2;
+    position: relative;
+}
+
+.image-container{
+    width: 400px;
+    height: 400px;
+    
+}
+.image__size {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.test{
+    display: flex;
+    gap: 4rem;
+    margin-left: 2rem;
+}

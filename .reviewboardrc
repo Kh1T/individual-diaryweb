@@ -1,0 +1,5 @@
+REVIEWBOARD_URL = "https://review.clp.kr/"
+REPOSITORY = "AlphaBeez/Khom-Khit/Diary-Web"
+REPOSITORY_TYPE = "git"
+BRANCH = "feature/note-overview"
+LAND_DEST_BRANCH = "feature/note-overview"
