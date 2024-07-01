@@ -6,6 +6,7 @@ export class Footer extends HTMLElement {
 connectedCallback() {
     this.innerHTML = `
     <section class="footer-container">
+    
     </section>
     `;
     }

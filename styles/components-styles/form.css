@@ -1,9 +1,10 @@
 .create-note-container{
-    width: 50%;
+    width: 100%;
     border: 2px solid black;
     border-radius: 16px;
     margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    margin-right: 2.5rem;
+    max-width: 900px;
 }
 
 .form-container {
@@ -14,9 +15,12 @@
     right: 1rem; 
     bottom: 10;
     grid-column: span 7;
+    border: 2px solid black ;
+    border-top: none;
+    border-bottom:none;
 }
 
-.form__note {
+.note__form {
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -27,4 +31,5 @@
     padding-right: 0.5rem;
     border-width: 2px;
     border-radius: 18px;
+    background-color: white;
 }
