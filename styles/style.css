@@ -32,6 +32,8 @@ a{
 }
 #description{
     margin: 0px;
+    font-size: 18px;
+    resize: none;
 }
 .logo-text {
     color: #DC2626; 
@@ -39,6 +41,8 @@ a{
 
 .main-container{
         display: flex;
+        min-height: 1394px;
+        margin-bottom: 60px
         }
 
 	@media (min-width: 768px) { 

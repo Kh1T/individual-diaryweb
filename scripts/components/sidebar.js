@@ -1,12 +1,12 @@
 function createSidebarComponent(containerAttribute) {
   // Find the container using the data attribute
-  var container = document.querySelector(
+  let container = document.querySelector(
     `[data-container="${containerAttribute}"]`
   );
-  var defaultPage = container.getAttribute("data-page");
+  let defaultPage = container.getAttribute("data-page");
 
   // Define the HTML content for the sidebar
-  var sidebarHTML = `
+  let sidebarHTML = `
         <div class="group-container">
             <div class="group__sidebar">
                 <a href="../index.html"><div class="sidebar__item">Home</div></a>
@@ -22,16 +22,17 @@ function createSidebarComponent(containerAttribute) {
   container.innerHTML = sidebarHTML;
 
   // Add event listeners to the sidebar items
-  var sidebarItems = container.getElementsByClassName("sidebar__item");
-  for (var i = 0; i < sidebarItems.length; i++) {
+  let sidebarItems = container.getElementsByClassName("sidebar__item");
+  for (let i = 0; i < sidebarItems.length; i++) {
     // Set the default active item based on data-page attribute
     if (sidebarItems[i].textContent === defaultPage) {
       sidebarItems[i].style.backgroundColor = "red";
+      sidebarItems[i].style.color = "white";
     }
 
     sidebarItems[i].addEventListener("click", function () {
       // Remove the red background from all sidebar items
-      for (var j = 0; j < sidebarItems.length; j++) {
+      for (let j = 0; j < sidebarItems.length; j++) {
         sidebarItems[j].style.backgroundColor = "";
       }
       // Set the red background for the clicked sidebar item
