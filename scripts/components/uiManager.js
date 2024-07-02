@@ -8,7 +8,7 @@ const noteContainer = document.querySelector("#note-container");
  * Function to render notes in the UI.
  */
 export function renderNotes() {
-  const noteContainer = document.querySelector("#note-container");
+  
   noteContainer.innerHTML = "";
   const notes = getNotes().reverse(); // Reverse to show latest notes first
   notes.forEach((note) => {
@@ -47,7 +47,7 @@ export function renderNotes() {
  * @param {number} wordLimit - The maximum number of words allowed in the truncated description.
  * @returns {string} - The truncated description with an ellipsis if it exceeds the word limit.
  */
-function truncateDescription(description, wordLimit) {
+export function truncateDescription(description, wordLimit) {
   const words = description.split(" ");
   return words.length > wordLimit
     ? words.slice(0, wordLimit).join(" ") + "..."
