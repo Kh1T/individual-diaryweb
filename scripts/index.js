@@ -92,8 +92,6 @@ function changeStyle() {
     const createNote = document.getElementById("create-note");
     const noteWrapper = document.querySelectorAll(".note__wrapper")
 
-    console.log(noteWrapper)
-
     if (page !== "Home") {
         createNote.style.display = "none";
     } else {
@@ -131,3 +129,40 @@ updateBreadcrumb();
      infoText.style.display = "none"; // Hide infoText
    }
  });
+
+
+ // Function to show modal
+function showModal(noteId) {
+  const modal = document.getElementById("myModal");
+  modal.style.display = "block";
+
+  // Get buttons from modal
+  const btnYes = document.getElementById("btnYes");
+  const btnNo = document.getElementById("btnNo");
+
+  // Add event listeners to buttons
+  btnYes.addEventListener("click", () => {
+    // Perform action when Yes is clicked (e.g., delete note)
+    // Example: deleteNoteById(noteId);
+    closeModal();
+  });
+
+  btnNo.addEventListener("click", () => {
+    // Perform action when No is clicked (e.g., cancel action)
+    closeModal();
+  });
+
+  // Function to close modal
+  function closeModal() {
+    modal.style.display = "none";
+    btnYes.removeEventListener("click", closeModal);
+    btnNo.removeEventListener("click", closeModal);
+  }
+
+  // Close modal when clicking outside of modal content
+  window.onclick = function (event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  };
+}
