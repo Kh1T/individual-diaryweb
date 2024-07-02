@@ -1,0 +1,6 @@
+.textnav-container {
+    margin: 0.5rem;
+    padding-left: 0.5rem;
+    text-decoration:underline;
+    text-underline-offset: 0.5rem;
+}

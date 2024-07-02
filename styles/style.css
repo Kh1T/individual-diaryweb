@@ -5,6 +5,7 @@
 @import url(./components-styles/side-bar.css);
 @import url(./components-styles/form.css);
 @import url(./components-styles/button.css);
+@import url(./components-styles/textnav.css);
 
 :root {
     --primary-color : #DC2626;
@@ -25,12 +26,23 @@ li {
     margin: 0;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+#description{
+    margin: 0px;
+    font-size: 18px;
+    resize: none;
+}
 .logo-text {
     color: #DC2626; 
 }
 
 .main-container{
         display: flex;
+        min-height: 1394px;
+        margin-bottom: 60px
         }
 
 	@media (min-width: 768px) { 
@@ -85,16 +97,25 @@ li {
 .image-container{
     width: 400px;
     height: 400px;
-    
+    display: none;
+    padding-right: 5rem;
 }
+@media (min-width : 1320px) {
+    .image-container{
+        display: block;
+    }
+}
+
 .image__size {
     width: 400px;
     height: 400px;
     object-fit: cover;
+    border-radius: 4rem;
+    box-shadow: 4px 4px;
 }
 
 .test{
     display: flex;
     gap: 4rem;
-    margin-left: 2rem;
+    margin-left: 1rem;
 }

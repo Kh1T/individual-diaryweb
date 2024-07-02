@@ -1,5 +1,5 @@
 import { Footer } from "./components/footer.js";
-
+import { Header } from "./components/header.js"
 
 customElements.define("footer-component", Footer);
-console.log("it work bro")
+customElements.define("header-component", Header);
