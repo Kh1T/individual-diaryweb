@@ -119,3 +119,6 @@ a{
     gap: 4rem;
     margin-left: 1rem;
 }
+.show {
+    display: block;
+}

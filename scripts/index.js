@@ -1,6 +1,6 @@
 
 import { renderNotes } from './components/uiManager.js';
-import { addNote, deleteNote, editNote, loadNotes, getNotes , scrollToTop } from './components/noteManager.js';
+import { addNote, deleteNote, editNote, loadNotes, getNotes } from './components/noteManager.js';
 
 /**
  * @type {HTMLElement} noteContainer - The container element for the notes.
@@ -82,3 +82,52 @@ noteContainer.addEventListener("click", (e) => {
         addButton.innerHTML = "Close";
     }
 });
+
+
+const body = document.querySelector("body");
+const page = body.getAttribute("data-page");
+
+function changeStyle() {
+
+    const createNote = document.getElementById("create-note");
+    const noteWrapper = document.querySelectorAll(".note__wrapper")
+
+    console.log(noteWrapper)
+
+    if (page !== "Home") {
+        createNote.style.display = "none";
+    } else {
+        createNote.style.display = ""; // Ensure it's displayed on the Home page
+    }
+
+    
+}
+
+function updateBreadcrumb() {
+  const breadcrumb = document.querySelector(".textnav-container p");
+
+  let breadcrumbText = `<a href="../index.html">Home</a>`; // Default text with a link to Home
+
+  // Update breadcrumb text based on the page type
+  if (page && page !== "Home") {
+    breadcrumbText += ` > ${page}`;
+  }
+
+  // Set the breadcrumb text
+  breadcrumb.innerHTML = breadcrumbText;
+}
+
+
+changeStyle();
+updateBreadcrumb();
+
+ const infoButton = document.getElementById("info");
+ const infoText = document.querySelector(".info__text");
+
+ infoButton.addEventListener("click", function () {
+   if (infoText.style.display === "none") {
+     infoText.style.display = "block"; // Show infoText
+   } else {
+     infoText.style.display = "none"; // Hide infoText
+   }
+ });

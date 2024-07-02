@@ -29,6 +29,8 @@ export function renderNotes() {
             </div>
         `;
   });
+
+  hideButtons();
   // Add event listeners to the edit buttons
   document.querySelectorAll(".note__edit").forEach(function (button) {
     button.addEventListener("click", function () {
@@ -51,3 +53,22 @@ function truncateDescription(description, wordLimit) {
     ? words.slice(0, wordLimit).join(" ") + "..."
     : description;
 }
+
+function hideButtons() {
+  const body = document.querySelector("body");
+  const pageType = body.getAttribute("data-page");
+
+  if (pageType === "View & Delete") {
+    document.querySelectorAll(".note__edit").forEach((button) => {
+      button.style.display = "none";
+    });
+  } else if (pageType === "List") {
+    document
+      .querySelectorAll(".note__edit, .note__delete")
+      .forEach((button) => {
+        button.style.display = "none";
+      });
+  }
+}
+
+
