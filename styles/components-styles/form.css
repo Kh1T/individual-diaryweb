@@ -1,9 +1,24 @@
+.test{
+    display: grid;
+    gap: 4rem;
+    width:95%;
+    margin-left: 0px;
+}
+@media (min-width: 768px) {
+    .test {
+    display: flex;
+    gap: 4rem;
+    margin-left: 20px;
+    align-items: center;
+    }   
+}
+
 .create-note-container{
     width: 100%;
     border: 2px solid black;
     border-radius: 16px;
     margin-left: 0.5rem;
-    margin-right: 2.5rem;
+    margin-right: 0.5rem;
     max-width: 900px;
 }
 

@@ -8,7 +8,7 @@ export class Header extends HTMLElement {
     <!-- Header -->
     <section class="header-container ">
           <img class="header__logo" src = "../assets/logo/logo.png"/>
-        <h3 class="header__text">Diary-Bro</h3>
+        <h3 class="header__text">Diary-Web</h3>
     </section>
     `;
   }

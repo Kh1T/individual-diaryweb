@@ -10,7 +10,7 @@ connectedCallback() {
             <p>Made by Khit Khom [Team AlphaBeez]</p>
         </div>
         <img id="info" src = "../assets/logo/info-logo.png"/>
-        <img src = "../assets/logo/hamberger-logo.png"/>
+        <img class= "menu" src = "../assets/logo/hamberger-logo.png"/>
     </section>
     `;
     }

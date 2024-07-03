@@ -1,50 +1,79 @@
-// Function to retrieve noteId from query parameter
-function getNoteIdFromQueryParam() {
-  const urlParams = new URLSearchParams(window.location.search);
-  return parseInt(urlParams.get("id")); // Ensure noteId is parsed as integer
-}
 
-// Event listener when DOM is loaded
-document.addEventListener("DOMContentLoaded", function () {
-  const noteId = getNoteIdFromQueryParam();
-  const notes = JSON.parse(localStorage.getItem("notes")) || [];
 
-  // Find the note in notes array with the matching noteId
-  const note = notes.find((n) => n.id === noteId);
+        // Function to retrieve noteId from query parameter
+        function getNoteIdFromQueryParam() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return parseInt(urlParams.get('id')); // Ensure noteId is parsed as integer
+        }
 
-  if (note) {
-    // Populate form fields with existing note details
-    document.getElementById("title").value = note.title;
-    document.getElementById("date").value = note.date;
-    document.getElementById("description").value = note.description;
-  } else {
-    console.error("Note not found");
-  }
-});
+        // Event listener when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const noteId = getNoteIdFromQueryParam();
+            const notes = JSON.parse(localStorage.getItem("notes")) || [];
 
-// Function to update existing note details
-function updateNote() {
-  const noteId = getNoteIdFromQueryParam();
-  let notes = JSON.parse(localStorage.getItem("notes")) || [];
+            renderEditNoteForm(notes, noteId);
+        });
 
-  // Find the index of the note with the specified id
-  const index = notes.findIndex((note) => note.id === noteId);
+        // Function to render edit note form based on noteId
+        function renderEditNoteForm(notes, noteId) {
+            console.log('notes:', notes);
+            console.log('noteId:', noteId);
 
-  if (index !== -1) {
-    // Update note details
-    notes[index] = {
-      id: noteId,
-      title: document.getElementById("title").value,
-      date: document.getElementById("date").value,
-      description: document.getElementById("description").value,
-    };
+            // Find the note in notes array with the matching noteId
+            const note = notes.find(n => n.id === noteId);
 
-    // Update localStorage with the modified notes array
-    localStorage.setItem("notes", JSON.stringify(notes));
+            console.log('found note:', note);
 
-    // Redirect to index.html or any other appropriate page after updating
-    window.location.href = "../index.html";
-  } else {
-    console.error(`Note with ID ${noteId} not found.`);
-  }
-}
+            if (note) {
+              // Display note details in form
+              const formContainer = document.getElementById("edit-container");
+              formContainer.innerHTML = `
+                    <h1>Edit Note</h1>
+                    <form id="edit-form">
+                        <input type="text" id="edit-title" value="${note.title}" required>
+                        <input type="date" id="edit-date" value="${note.date}" required>
+                        <textarea id="edit-description" required>${note.description}</textarea>
+                        <div>
+                          <input type="submit" value="Save Changes">
+                          <button type="button" id = "cancel-btn">Cancel</button>
+                        </div>
+                    </form>
+                `;
+
+              // Event listener for form submission to save changes
+              document
+.getElementById("edit-form")
+                .addEventListener("submit", function (event) {
+                  event.preventDefault();
+                  saveNoteChanges(noteId);
+                });
+
+              // Event listener for Cancel button to go back to index.html
+              document
+                .getElementById("cancel-btn")
+                .addEventListener("click", function () {
+                  window.location.href = "../index.html";
+                });
+            }
+        }
+
+        // Function to save note changes
+        function saveNoteChanges(noteId) {
+            const title = document.getElementById("edit-title").value;
+            const date = document.getElementById("edit-date").value;
+            const description = document.getElementById("edit-description").value;
+
+            let notes = JSON.parse(localStorage.getItem("notes")) || [];
+            const noteIndex = notes.findIndex(n => n.id === noteId);
+
+            if (noteIndex !== -1) {
+                notes[noteIndex].title = title;
+                notes[noteIndex].date = date;
+                notes[noteIndex].description = description;
+
+                localStorage.setItem("notes", JSON.stringify(notes));
+                
+                window.location.href = '../index.html';
+            } 
+        }
+

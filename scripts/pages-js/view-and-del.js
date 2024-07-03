@@ -24,7 +24,6 @@ function renderNoteDetails(notes, noteId) {
     // Display note details
     const noteDetailsElement = document.getElementById("note-details");
     noteDetailsElement.innerHTML = `
-      <h1>Note Details</h1>
       <h2>Title: ${note.title}</h2>
       <p>Date: ${note.date}</p>
       <p>Description: ${note.description}</p>

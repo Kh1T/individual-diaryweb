@@ -65,6 +65,7 @@ a{
     font-size: 36px;
     font-weight: 200;
     font-style: italic;
+    text-align: center;
 }
 
 .overview-container {
@@ -101,7 +102,7 @@ a{
     display: none;
     padding-right: 5rem;
 }
-@media (min-width : 1320px) {
+@media (min-width : 1440px) {
     .image-container{
         display: block;
     }
@@ -115,11 +116,17 @@ a{
     box-shadow: 4px 4px;
 }
 
-.test{
-    display: flex;
-    gap: 4rem;
-    margin-left: 1rem;
-}
+
 .show {
     display: block;
+}
+
+.menu {
+    display: none;
+}
+
+@media (max-width : 768px) {
+    .menu{
+        display: block;
+    }
 }

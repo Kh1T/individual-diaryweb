@@ -4,29 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/pages-style/edit.css">
     <link rel="icon" type="icon" href="./assets/logo/logo.png" />
     <title>Create</title>
 </head>
-<body>
+<body data-page="Edit">
     <header-component></header-component>
     <div class="main-container">
-    <div data-container="sidebar" data-page="Edit"></div>
-    <div class="form-container">
-      <div class="textnav-container">
-        <p><a href="../index.html">Home</a> > Edit</p>
-      </div>
-      <h1>Edit Note</h1>
-      <form id="edit-form" class="note__form">
-        <input class="note__title" id="title" placeholder="Title..." required>
-        <input class="note__date" id="date" type="date" required>
-        <textarea class="note__description" id="description" placeholder="Add description..." required></textarea>
-        <div class="form-buttons">
-          <button type="submit" class="btn-update">Update</button>
-          <button type="button" class="btn-cancel">Cancel</button>
+        <div data-container="sidebar" data-page="Edit"></div>
+        <div class="form-container">
+            <div class="textnav-container">
+                <p>Home > Edit</p>
+            </div>
+            <div id="edit-container">
+                <!-- Edit note form will be populated here -->
+            </div>
         </div>
-      </form>
     </div>
-  </div>
 
   <footer-component></footer-component>
     <script src="../scripts/pages-js/edit.js"></script>
