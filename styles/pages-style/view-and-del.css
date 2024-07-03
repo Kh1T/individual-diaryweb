@@ -1,0 +1,20 @@
+#note-details {
+    padding: 0rem 2rem ;
+    background-color: white;
+    border-radius: 2rem;
+}
+
+#note-details h1 {
+    font-size : 26px;
+    background-color: wheat;
+    padding: 1rem 0rem 1rem 1rem;
+    border-radius: 1rem;
+}
+
+#note-details h2, p , button {
+    padding-left: 0.5rem;
+}
+
+#note-details button {
+    margin: 1rem 0.5rem;
+}

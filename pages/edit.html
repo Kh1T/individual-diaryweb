@@ -10,9 +10,28 @@
 <body>
     <header-component></header-component>
     <div class="main-container">
-        <div data-container="sidebar" data-page="Edit"></div>
+    <div data-container="sidebar" data-page="Edit"></div>
+    <div class="form-container">
+      <div class="textnav-container">
+        <p><a href="../index.html">Home</a> > Edit</p>
+      </div>
+      <h1>Edit Note</h1>
+      <form id="edit-form" class="note__form">
+        <input class="note__title" id="title" placeholder="Title..." required>
+        <input class="note__date" id="date" type="date" required>
+        <textarea class="note__description" id="description" placeholder="Add description..." required></textarea>
+        <div class="form-buttons">
+          <button type="submit" class="btn-update">Update</button>
+          <button type="button" class="btn-cancel">Cancel</button>
+        </div>
+      </form>
     </div>
-    <footer-component></footer-component>
+  </div>
+
+  <footer-component></footer-component>
+    <script src="../scripts/pages-js/edit.js"></script>
+
+
     <script src="../scripts/index.js" type="module"></script>
     <script src = "../scripts/script.js" type="module"></script>
     <script src="../scripts/components/sidebar.js"></script>

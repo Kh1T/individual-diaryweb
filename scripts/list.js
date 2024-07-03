@@ -3,6 +3,7 @@ import { getNotes } from "./components/noteManager.js";
 
 const noteContainer = document.querySelector("#note-container");
 
+
 export function renderNotesList() {
   noteContainer.innerHTML = "";
   const notes = getNotes().reverse(); // Show latest notes first

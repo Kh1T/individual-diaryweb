@@ -152,14 +152,9 @@ function showModal(noteId) {
 
 
   function handleNoClick() {
-    const note = getNotes().find((note) => note.id === noteId);
-    titleInput.value = note.title;
-    dateInput.value = note.date;
-    descriptionInput.value = note.description;
-    editMode = true;
-    editNoteId = noteId;
-    createNote.classList.remove("hidden");
-    closeModal();
+    // Redirect to Edit page with noteId as query parameter
+    window.location.href = `../pages/edit.html?id=${noteId}`;
+    closeModal(); // Close the modal after redirecting
   }
 
   // Add event listeners
