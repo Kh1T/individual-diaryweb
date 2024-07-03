@@ -18,6 +18,9 @@ const descriptionInput = noteForm.querySelector(".note__description");
 const createNote = document.querySelector("#create-note");
 const addButton = document.querySelector("#add-button");
 const noteContainer = document.querySelector("#note-container");
+console.log(descriptionInput);
+const notes = getNotes().reverse(); 
+console.log(notes)
 
 // Load note data from localStorage on page load
 /**
@@ -34,7 +37,6 @@ renderNotes();
 
 // Event listener for form submission to add or edit a note
 noteForm.addEventListener("submit", (e) => {
-    e.preventDefault();
 
     if (editMode) {
         // Edit existing note
@@ -66,20 +68,22 @@ noteContainer.addEventListener("click", (e) => {
     const noteId = parseInt(target.dataset.id);
 
     if (target.classList.contains("note__delete")) {
-        if (window.confirm("Are you sure you want to delete this note?")) {
-            deleteNote(noteId);
-            renderNotes();
-        }
+      if (window.confirm("Are you sure you want to delete this note?")) {
+        deleteNote(noteId);
+        renderNotes();
+        location.reload();
+      }
     } else if (target.classList.contains("note__edit")) {
-        const note = getNotes().find(note => note.id === noteId);
-        titleInput.value = note.title;
-        dateInput.value = note.date;
-        descriptionInput.value = note.description;
-        editMode = true;
-        editNoteId = noteId;
+      const note = getNotes().find((note) => note.id === noteId);
+      titleInput.value = note.title;
+      dateInput.value = note.date;
+      descriptionInput.value = note.description;
+      editMode = true;
+      editNoteId = noteId;
 
-        createNote.classList.remove("hidden");
-        addButton.innerHTML = "Close";
+      createNote.classList.remove("hidden");
+    } else if (target.classList.contains("note__info")) {
+      showModal(noteId);
     }
 });
 
@@ -104,59 +108,69 @@ function changeStyle() {
 function updateBreadcrumb() {
   const breadcrumb = document.querySelector(".textnav-container p");
 
-  let breadcrumbText = `<a href="../index.html">Home</a>`; // Default text with a link to Home
+  if (breadcrumb) {
+    let breadcrumbText = `<a href="../index.html">Home</a>`; // Default text with a link to Home
 
-  // Update breadcrumb text based on the page type
-  if (page && page !== "Home") {
-    breadcrumbText += ` > ${page}`;
-  }
+    // Update breadcrumb text based on the page type
+    const body = document.querySelector("body");
+    const page = body.getAttribute("data-page");
 
-  // Set the breadcrumb text
-  breadcrumb.innerHTML = breadcrumbText;
+    if (page && page !== "Home") {
+      breadcrumbText += ` > ${page}`;
+    }
+    // Set the breadcrumb text
+    breadcrumb.innerHTML = breadcrumbText;
+  } 
 }
 
 
 changeStyle();
 updateBreadcrumb();
 
- const infoButton = document.getElementById("info");
- const infoText = document.querySelector(".info__text");
 
- infoButton.addEventListener("click", function () {
-   if (infoText.style.display === "none") {
-     infoText.style.display = "block"; // Show infoText
-   } else {
-     infoText.style.display = "none"; // Hide infoText
-   }
- });
-
-
- // Function to show modal
+/**
+ * Function to show modal with customizable buttons and actions
+ * @param {number} noteId - The ID of the note associated with the modal action.
+ */
 function showModal(noteId) {
   const modal = document.getElementById("myModal");
   modal.style.display = "block";
-
+  console.log(`Note ID: ${noteId}`);
   // Get buttons from modal
   const btnYes = document.getElementById("btnYes");
   const btnNo = document.getElementById("btnNo");
 
-  // Add event listeners to buttons
-  btnYes.addEventListener("click", () => {
-    // Perform action when Yes is clicked (e.g., delete note)
-    // Example: deleteNoteById(noteId);
-    closeModal();
-  });
+  // Remove existing event listeners to avoid multiple triggers
+  btnYes.removeEventListener("click", handleYesClick);
+  btnNo.removeEventListener("click", handleNoClick);
 
-  btnNo.addEventListener("click", () => {
-    // Perform action when No is clicked (e.g., cancel action)
+  // Define click handlers
+  function handleYesClick() {
+    // Redirect to View & Delete page with noteId as query parameter
+    window.location.href = `../pages/view&delete.html?id=${noteId}`;
+  }
+
+
+  function handleNoClick() {
+    const note = getNotes().find((note) => note.id === noteId);
+    titleInput.value = note.title;
+    dateInput.value = note.date;
+    descriptionInput.value = note.description;
+    editMode = true;
+    editNoteId = noteId;
+    createNote.classList.remove("hidden");
     closeModal();
-  });
+  }
+
+  // Add event listeners
+  btnYes.addEventListener("click", handleYesClick);
+  btnNo.addEventListener("click", handleNoClick);
 
   // Function to close modal
   function closeModal() {
     modal.style.display = "none";
-    btnYes.removeEventListener("click", closeModal);
-    btnNo.removeEventListener("click", closeModal);
+    btnYes.removeEventListener("click", handleYesClick);
+    btnNo.removeEventListener("click", handleNoClick);
   }
 
   // Close modal when clicking outside of modal content
@@ -166,3 +180,4 @@ function showModal(noteId) {
     }
   };
 }
+

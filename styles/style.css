@@ -6,6 +6,7 @@
 @import url(./components-styles/form.css);
 @import url(./components-styles/button.css);
 @import url(./components-styles/textnav.css);
+@import url(./components-styles/modal.css);
 
 :root {
     --primary-color : #DC2626;

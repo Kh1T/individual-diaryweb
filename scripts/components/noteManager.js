@@ -1,5 +1,7 @@
+import { renderNotes } from "../components/uiManager.js";
+
 // Function to scroll to the top of the page
- export function scrollToTop() {
+export function scrollToTop() {
   window.scrollTo({
     top: 0,
     behavior: "smooth",
@@ -28,12 +30,19 @@ export function getNotes() {
 export function addNote(note) {
     notes.push(note);
     saveNotes();
+    renderNotes();
 }
 
 // Delete a note
 export function deleteNote(noteId) {
-    notes = notes.filter(note => note.id !== noteId);
+  // Find the index of the note to be deleted
+  const noteIndex = notes.findIndex((note) => note.id === noteId);
+  if (noteIndex > -1) {
+    // Remove the note from the array
+    notes.splice(noteIndex, 1);
+    // Save the updated notes to localStorage
     saveNotes();
+  }
 }
 
 // Edit a note
@@ -42,6 +51,7 @@ export function editNote(noteId, updatedNote) {
     if (noteIndex !== -1) {
         notes[noteIndex] = updatedNote;
         saveNotes();
+        renderNotes();
     }
 }
 
@@ -50,6 +60,5 @@ function saveNotes() {
     localStorage.setItem("notes", JSON.stringify(notes));
 }
 
-// Initialize notes from localStorage when the script is loaded
 loadNotes();
 
