@@ -6,8 +6,30 @@
     background-color: #fca5a5;
     text-align: center;
     width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
 }
 
 .footer__text{
     background-color: #fca5a5;
 }
+
+.footer-container img {
+    padding-right: 1rem;
+}
+
+.footer-container div {
+    background-color: white;
+    border-radius: 2rem;
+    padding:0rem 2rem;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.info__text {
+    display: none;
+}
+
+
