@@ -12,13 +12,20 @@
 }
 
 /* Modal Content */
-.modal-content {
+.modal-content { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 20% auto; /* 15% from the top and centered */
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid black;
   width: 80%;
+  border-radius: 16px;
+  box-shadow: -8px 8px;
 }
+
+
 
 /* Close Button */
 .close {

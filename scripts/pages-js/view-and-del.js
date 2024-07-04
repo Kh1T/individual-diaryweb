@@ -28,6 +28,7 @@ function renderNoteDetails(notes, noteId) {
       <p>Date: ${note.date}</p>
       <p>Description: ${note.description}</p>
       <button onclick="deleteNote()">Delete Note</button>
+      <button onclick="window.location.href = '../index.html'">Cancel</button>
     `;
   } else {
     console.error('Note not found');

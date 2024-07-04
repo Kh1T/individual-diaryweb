@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/pages-style/create.css">
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/pages-style/create.css">
     <link rel="icon" type="icon" href="../assets/logo/logo.png" />
     <title>Create</title>
 </head>
@@ -15,19 +15,19 @@
         <div class="form-container">
             
                 <h1>Creating Note: </h1>
-                    <div class="test">
-                        <div id='create-note' class="create-note-container" >
-                          <form id="note-form" class = "note__form">
-                            <input class="note__title" id="title" placeholder="Title..." required>
-                            <input class="note__date" id="date" type="date" required>
-                            <textarea class="note__description" id="description" placeholder="Add description..." required></textarea>
-                            <input  class="btn-addnote" type="submit" value="Add Note">
-                            <!-- <button id="add-button" class="btn-add">Add</button> -->
-                        </div>    
+                <form id="note-form" class="note__form">
+                    <input class="note__title" id="title" placeholder="Title..." required>
+                    <input class="note__date" id="date" type="date" required>
+                    <textarea class="note__description" id="description" placeholder="Add description..." required></textarea>
+                    <input class="btn-addnote" type="submit" value="Add Note">
+                </form>
+
             </div>
         </div>
     </div>
     <footer-component></footer-component>
+
+    <script src="../scripts/pages-js/create.js"></script>
     <script src="../scripts/index.js" type="module"></script>
     <script src = "../scripts/script.js" type="module"></script>
     <script src="../scripts/components/sidebar.js"></script>

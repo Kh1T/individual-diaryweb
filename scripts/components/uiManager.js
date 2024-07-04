@@ -5,7 +5,7 @@ import { getNotes , scrollToTop , loadNotes } from "./noteManager.js";
 const noteContainer = document.querySelector("#note-container");
 loadNotes();
 const notes = getNotes().reverse(); 
-console.log(notes.description)
+
 /**
  * Function to render notes in the UI.
  */
