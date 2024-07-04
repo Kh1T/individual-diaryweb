@@ -86,7 +86,7 @@ a{
 .container-notebtn{
     display: flex;
     justify-content: flex-end;
-    padding-top: 0.5rem;
+    padding: 8px;
 }
 
 .group-container {

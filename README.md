@@ -15,13 +15,19 @@ This project is
 The Note Diary Web Application is a simple and intuitive tool for creating, editing, and managing personal notes. Users can add, view, and delete notes seamlessly.
 
 ## Table of Contents
-- [Installation](#installation)
+- [Technology Used](#technology-used)
 - [Usage](#usage)
 - [Folder Structure](#folder-structure)
 - [Acknowledgments](#acknowledgments)
-- [Contact](#contact)
 
-## Installation
+## Technology Used
+| **Technologies** | **Purpose** |
+|------------------|------------------|
+| HTML             | Structure and Create content for the pages |
+| CSS              | Styling HTML elements and layout |
+| JavaScript       | Use to make the website behaviour |
+
+## Usage
 
 ### Prerequisites
 - A text editor or Integrated Development Environment (IDE) for viewing the project:
@@ -38,14 +44,11 @@ The Note Diary Web Application is a simple and intuitive tool for creating, edit
     cd note-diary-web
     ```
 
-## Usage
+## Folder Structure
 
 ### Running the Project
 To start the development server, run:
 ```bash
-npm start
-
-## Folder Structure
 note-diary-web/
 │
 ├── assets/            # Images and other assets
@@ -88,7 +91,7 @@ note-diary-web/
 │
 ├── index.html             # Home page
 └── README.md              # Project README file
-
+```
 ## Pages Included
 
 | Page Names |
@@ -101,65 +104,29 @@ note-diary-web/
 
 
 ### Features
-Features
-a. Create Notes
+
+#### a. Create Notes
     1. Go to the "Create Note" page.
     2. Fill in the note title, date, and description in the form.
     3. Click the "Add Note" button to save the note.
-b. View Notes
-    1. Navigate to the home page to see a list of all notes.
-    2. Click on a note to view its details.
-c. Edit Notes
-    1. In the list of notes, click the "Edit" button next to the note you want to edit.
+#### b. View Notes
+    1. Navigate to the list page to see a list of all notes.
+#### c. Edit Notes
+    1. In the popup modal that will show after click on the notes , if user decide to click the "Edit" button will lead to edit page.
     2. Update the title, date, and description in the form.
-    3. Click "Save Changes" to update the note.
-d. Delete Notes
+    3. Click "Add" to update the note.
+#### d. Delete Notes
     1. In the list of notes, click the "Delete" button next to the note you want to remove.
     2. Confirm the deletion in the popup modal.
 
 
-## Technology Used
-| **Technologies** | **Purpose** |
-|------------------|------------------|
-| HTML             | Structure and Create content for the pages |
-| CSS              | Styling HTML elements and layout |
-| JavaScript       | Use to make the website behaviour |
 
 ## Git Strategy & Scenario
 
 ![GIT_FLOW_STRATEGY](./assets/images//GIT_FLOW_STRATEGY.png)
 
-Implementation:
-
-
-Feature Branches:
-
-
-Feature 1: Create a feature branch to implement Pound to Kg conversion.
-Feature 2: Implement Fahrenheit to Celsius conversion.
-Feature 3: Develop Mile to Kilometer conversion.
-
-
-Release Branch:
-
-
-Prepare the codebase for release, ensuring all features are thoroughly tested and stable.
-Tag the release with the version number (e.g., 1.0).
-
-
-Bug fix Branch:
-
-
-Create a bug fix branch to address any identified issues, such as adding missing headings.
-
-
-Hotfix Branch:
-
-
-If a critical issue arises post-release (e.g., grammatical errors), immediately create a hotfix branch for resolution.
-
-—--
-
+## Implementation:
+---
 Feature Branch:
 
 
@@ -198,7 +165,7 @@ Hotfix Branch:
 4. Merge/Rebase: Merge or rebase the hotfix branch with the main and develop branches.
 5. Finish Branch: Use the command git flow hotfix finish <version_number>.
 
-## Acknowledgement 
+## Acknowledgments
 
 Thanks to team Alphabeez members for helping to give feedbacks and review code for this Project.
 

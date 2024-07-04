@@ -16,13 +16,12 @@
 
         // Function to render edit note form based on noteId
         function renderEditNoteForm(notes, noteId) {
-            console.log('notes:', notes);
-            console.log('noteId:', noteId);
+            
 
             // Find the note in notes array with the matching noteId
             const note = notes.find(n => n.id === noteId);
 
-            console.log('found note:', note);
+            
 
             if (note) {
               // Display note details in form
