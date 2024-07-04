@@ -4,8 +4,8 @@ import { getNotes , scrollToTop , loadNotes } from "./noteManager.js";
 
 const noteContainer = document.querySelector("#note-container");
 loadNotes();
-const notes = getNotes().reverse(); 
-console.log(notes.description)
+const notes = getNotes(); 
+console.log(notes)
 /**
  * Function to render notes in the UI.
  */
@@ -17,6 +17,7 @@ export function renderNotes() {
     const truncatedDescription = note.description
       ? truncateDescription(note.description, 60)
       : ""; 
+      
     noteContainer.innerHTML += `
             <div class="note__wrapper">
             <div class="container-notebtn">

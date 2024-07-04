@@ -37,11 +37,11 @@ a{
     resize: none;
 }
 .logo-text {
-    color: #DC2626; 
+    color: var(--primary-color); 
 }
 
 .main-container{
-        display: flex;
+        
         min-height: 1394px;
         margin-bottom: 60px
         }
@@ -125,7 +125,7 @@ a{
     display: none;
 }
 
-@media (max-width : 768px) {
+@media (max-width : 767px) {
     .menu{
         display: block;
     }

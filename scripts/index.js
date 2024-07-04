@@ -1,6 +1,7 @@
 
 import { renderNotes } from './components/uiManager.js';
 import { addNote, deleteNote, editNote, loadNotes, getNotes } from './components/noteManager.js';
+import { showModal } from './components/modal.js';
 
 /**
  * @type {HTMLElement} noteContainer - The container element for the notes.
@@ -18,9 +19,8 @@ const descriptionInput = noteForm.querySelector(".note__description");
 const createNote = document.querySelector("#create-note");
 const addButton = document.querySelector("#add-button");
 const noteContainer = document.querySelector("#note-container");
-console.log(descriptionInput);
+
 const notes = getNotes().reverse(); 
-console.log(notes)
 
 // Load note data from localStorage on page load
 /**
@@ -60,6 +60,7 @@ noteForm.addEventListener("submit", (e) => {
 
     renderNotes();
     noteForm.reset();
+    location.href = "../index.html"
 });
 
 // Event delegation for handling delete and edit button clicks
@@ -128,51 +129,5 @@ changeStyle();
 updateBreadcrumb();
 
 
-/**
- * Function to show modal with customizable buttons and actions
- * @param {number} noteId - The ID of the note associated with the modal action.
- */
-function showModal(noteId) {
-  const modal = document.getElementById("myModal");
-  modal.style.display = "block";
-  console.log(`Note ID: ${noteId}`);
-  // Get buttons from modal
-  const btnYes = document.getElementById("btnYes");
-  const btnNo = document.getElementById("btnNo");
 
-  // Remove existing event listeners to avoid multiple triggers
-  btnYes.removeEventListener("click", handleYesClick);
-  btnNo.removeEventListener("click", handleNoClick);
-
-  // Define click handlers
-  function handleYesClick() {
-    // Redirect to View & Delete page with noteId as query parameter
-    window.location.href = `../pages/view&delete.html?id=${noteId}`;
-  }
-
-
-  function handleNoClick() {
-    // Redirect to Edit page with noteId as query parameter
-    window.location.href = `../pages/edit.html?id=${noteId}`;
-    closeModal(); // Close the modal after redirecting
-  }
-
-  // Add event listeners
-  btnYes.addEventListener("click", handleYesClick);
-  btnNo.addEventListener("click", handleNoClick);
-
-  // Function to close modal
-  function closeModal() {
-    modal.style.display = "none";
-    btnYes.removeEventListener("click", handleYesClick);
-    btnNo.removeEventListener("click", handleNoClick);
-  }
-
-  // Close modal when clicking outside of modal content
-  window.onclick = function (event) {
-    if (event.target === modal) {
-      closeModal();
-    }
-  };
-}
 

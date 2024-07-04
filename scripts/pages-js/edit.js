@@ -28,7 +28,7 @@
               // Display note details in form
               const formContainer = document.getElementById("edit-container");
               formContainer.innerHTML = `
-                    <h1>Edit Note</h1>
+                    
                     <form id="edit-form">
                         <input type="text" id="edit-title" value="${note.title}" required>
                         <input type="date" id="edit-date" value="${note.date}" required>
