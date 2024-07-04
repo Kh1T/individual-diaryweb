@@ -17,13 +17,19 @@
   flex-direction: column;
   align-items: center;
   background-color: #fefefe;
-  margin: 20% auto; /* 15% from the top and centered */
+  margin: 20% auto; 
   padding: 20px;
   border: 1px solid black;
-  width: 80%;
+  width: 360px;
   border-radius: 16px;
   box-shadow: -8px 8px;
 }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                margin: 80% auto;
+            }
+        }
 
 
 

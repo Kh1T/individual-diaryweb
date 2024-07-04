@@ -7,7 +7,7 @@ export class Header extends HTMLElement {
     this.innerHTML = `
     <!-- Header -->
     <section class="header-container ">
-          <img class="header__logo" src = "../assets/logo/logo.png"/>
+        <a href = "../index.html" >  <img class="header__logo" src = "../assets/logo/logo.png"/></a>
         <h3 class="header__text">Diary-Web</h3>
     </section>
     `;

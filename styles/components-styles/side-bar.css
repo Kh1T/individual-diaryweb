@@ -14,11 +14,21 @@
     }
 }
 
-.sidebar__item {
-    padding: 16px 0px;
-    border-color: black;
-    padding-left: 12px;
-    border: 1px solid black;
-    
-}
+        .sidebar__item {
+            padding: 16px 0px;
+            border-color: black;
+            padding-left: 12px;
+            border: 1px solid black;
+        }
 
+        .sidebar-hidden {
+            display: none;
+        }
+
+        @media (max-width: 767px) {
+            .sidebar-visible {
+                display: block;
+                position: absolute; 
+                min-width: 180px;
+            }
+        } 
