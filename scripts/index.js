@@ -18,9 +18,8 @@ const descriptionInput = noteForm.querySelector(".note__description");
 const createNote = document.querySelector("#create-note");
 const addButton = document.querySelector("#add-button");
 const noteContainer = document.querySelector("#note-container");
-console.log(descriptionInput);
+
 const notes = getNotes().reverse(); 
-console.log(notes)
 
 // Load note data from localStorage on page load
 /**
@@ -60,6 +59,7 @@ noteForm.addEventListener("submit", (e) => {
 
     renderNotes();
     noteForm.reset();
+    location.href = "../index.html"
 });
 
 // Event delegation for handling delete and edit button clicks
@@ -135,7 +135,7 @@ updateBreadcrumb();
 function showModal(noteId) {
   const modal = document.getElementById("myModal");
   modal.style.display = "block";
-  console.log(`Note ID: ${noteId}`);
+  
   // Get buttons from modal
   const btnYes = document.getElementById("btnYes");
   const btnNo = document.getElementById("btnNo");
