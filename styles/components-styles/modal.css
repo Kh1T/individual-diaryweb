@@ -53,6 +53,8 @@
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
+  border-radius: 32px;
+  border:2px solid black;
 }
 
 .modal-content button:hover {

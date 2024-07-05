@@ -11,8 +11,8 @@ function createSidebarComponent(containerAttribute) {
             <div class="group__sidebar">
                 <a href="../index.html"><div class="sidebar__item">Home</div></a>
                 <a href="../pages/list.html"><div class="sidebar__item">List</div></a>
-                <a href="../pages/create.html"><div class="sidebar__item">Create</div></a>
                 <a href="../pages/view&delete.html"><div class="sidebar__item">View & Delete</div></a>
+                <a href="../pages/create.html"><div class="sidebar__item">Create</div></a>
                 <a href="../pages/edit.html"><div class="sidebar__item">Edit</div></a>
             </div>
         </div>

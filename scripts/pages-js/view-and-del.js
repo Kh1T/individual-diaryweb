@@ -27,7 +27,7 @@ function renderNoteDetails(notes, noteId) {
       <h2>Title: ${note.title}</h2>
       <p>Date: ${note.date}</p>
       <p>Description: ${note.description}</p>
-      <button onclick="deleteNote()">Delete Note</button>
+      <button class = "delete__btn" onclick="deleteNote()">Delete Note</button>
       <button onclick="window.location.href = '../index.html'">Cancel</button>
     `;
   }

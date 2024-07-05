@@ -15,23 +15,36 @@
     
 }
 
+.btn-cancel {
+  border-width: 2px;
+  border-radius: 24px;
+  border-color: solid black;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-weight: bold;
+  background: none;
+}
+
 .note__edit {
     border-width: 2px;
-    border-radius: 1.5rem;
+    border-radius: 24px;
     border-color: solid black;
     font-weight: bold;
-    background-color:var(--primary-color);
+    background-color: var(--primary-color);
     color: white;
-    padding: 8px 24px ;
+    padding: 8px 24px;
 }
 
 .note__delete {
   border-width: 2px;
-  border-radius: 1.5rem;
+  border-radius: 24px;
   border-color: solid black;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   font-weight: bold;
+  background: none;
 }
