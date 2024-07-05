@@ -1,0 +1,19 @@
+.content-container{
+    grid-column: span 7;
+    width: 100%;
+    border: 2px solid black;
+    border-top: none;
+    border-bottom: none;
+}
+
+.content-container h1 {
+     background-color:wheat;
+    border-radius: 16px;
+    box-shadow: 8px 8px;
+    margin-right: 8px;
+    padding: 8px 16px ;
+}
+
+.note__info {
+    height:260px;
+}

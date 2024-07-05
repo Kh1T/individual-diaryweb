@@ -1,0 +1,34 @@
+.group__sidebar {
+    grid-column: 1 / span 2 ;
+    display: none;
+    font-size: 24px;
+    background-color: #F5F5F7;
+    border-width: 2px;
+    padding: none;
+
+}
+
+@media (min-width: 768px) {
+    .group__sidebar {
+        display: block;
+    }
+}
+
+        .sidebar__item {
+            padding: 16px 0px;
+            border-color: black;
+            padding-left: 12px;
+            border: 1px solid black;
+        }
+
+        .sidebar-hidden {
+            display: none;
+        }
+
+        @media (max-width: 767px) {
+            .sidebar-visible {
+                display: block;
+                position: absolute; 
+                min-width: 180px;
+            }
+        } 

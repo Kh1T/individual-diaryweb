@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/pages-style/list.css">
+    <link rel="icon" type="icon" href="../assets/logo/logo.png" />
+    <title>list-page</title>
+</head>
+<body data-page = 'List'>
+    <header-component></header-component>
+    <div class="main-container">
+        <div data-container="sidebar" data-page="List"></div>
+        <div class="content-container">
+            <h1>Notes</h1>
+            <div id="note-container" class="note-container"></div>
+        </div>
+    </div>
+
+    <footer-component></footer-component>
+    
+    <script src="../scripts/components/sidebar.js"></script>
+    <script src="../scripts/index.js" type="module"></script>
+    <script src = "../scripts/script.js" type="module"></script>
+    <script src = "../scripts/pages-js/list.js"></script>
+    <script src="../scripts/list.js" type="module"></script>
+</body>
+</html>

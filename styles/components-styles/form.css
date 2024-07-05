@@ -1,0 +1,48 @@
+.note-section{
+    display: grid;
+    gap: 64px;
+    width:95%;
+    margin-left: 0px;
+}
+@media (min-width: 768px) {
+    .note-section {
+    display: flex;
+    gap: 64px;
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
+    }   
+}
+
+.create-note-container{
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 16px;
+    margin-left: 8px;
+    margin-right: 8px;
+    max-width: 900px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    border: black;
+    border-width: 2px;
+    right: 16px; 
+    bottom: 10;
+    grid-column: span 7;
+    border: 2px solid black ;
+    border-top: none;
+    border-bottom:none;
+}
+
+.note__form {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    border-width: 2px;
+    border-radius: 18px;
+    background-color: white;
+}
