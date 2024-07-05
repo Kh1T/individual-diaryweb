@@ -1,0 +1,140 @@
+@import url(./components-styles/header.css);
+@import url(./components-styles/footer.css);
+
+@import url(./components-styles/note.css);
+@import url(./components-styles/side-bar.css);
+@import url(./components-styles/form.css);
+@import url(./components-styles/button.css);
+@import url(./components-styles/modal.css);
+
+:root {
+    --primary-color : #CC504F;
+    --secondary-color : #EFEFEF;
+}
+
+body {
+    font-family:  Helvetica;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F7;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+}
+li {
+    list-style-type: none;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+#description{
+    margin: 8px;
+    font-size: 18px;
+    resize: none;
+    border:none;
+    line-height: normal;
+    animation: blink 1s infinite;
+}
+
+#date {
+    border: none;
+}
+.logo-text {
+    color: var(--primary-color); 
+}
+
+.main-container{
+        
+        min-height: 1394px;
+        margin-bottom: 60px
+        }
+
+	@media (min-width: 768px) { 
+        .main-container{
+            display: grid;
+            grid-template-columns: repeat(9, minmax(0, 1fr));
+            }
+     }
+
+.welcome-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 32px; 
+    padding-bottom: 32px; 
+}
+
+.welcome__text {
+    font-size: 36px;
+    font-weight: 200;
+    font-style: italic;
+    text-align: center;
+}
+
+.overview-container {
+    max-width: 1024px;
+    display: flex;
+    text-align: left;
+    padding-top: 20px;
+    align-self: flex-start;
+    padding-left: 16px;
+}
+
+.overview__text {
+    font-size: 30px;
+    font-weight: 700;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.container-notebtn{
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px;
+}
+
+.group-container {
+    display: grid;
+    border-radius: 2px;
+    grid-column: span 2;
+    position: relative;
+}
+
+.image-container{
+    width: 400px;
+    height: 400px;
+    display: none;
+    padding-right: 80px;
+}
+@media (min-width : 1440px) {
+    .image-container{
+        display: block;
+    }
+}
+
+.image__size {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 64px;
+    box-shadow: 4px 4px;
+}
+
+
+.show {
+    display: block;
+}
+
+.menu {
+    display: none;
+}
+
+@media (max-width : 767px) {
+    .menu{
+        display: block;
+    }
+}
