@@ -27,11 +27,9 @@ function renderNoteDetails(notes, noteId) {
       <h2>Title: ${note.title}</h2>
       <p>Date: ${note.date}</p>
       <p>Description: ${note.description}</p>
-      <button onclick="deleteNote()">Delete Note</button>
+      <button class = "delete__btn" onclick="deleteNote()">Delete Note</button>
       <button onclick="window.location.href = '../index.html'">Cancel</button>
     `;
-  } else {
-    console.error('Note not found');
   }
 }
 
@@ -52,7 +50,5 @@ function deleteNote() {
     
     // Redirect to index.html or any other appropriate page
     window.location.href = '../index.html';
-  } else {
-    console.error(`Note with ID ${noteId} not found.`);
-  }
+  } 
 }

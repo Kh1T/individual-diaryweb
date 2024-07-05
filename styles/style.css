@@ -5,11 +5,11 @@
 @import url(./components-styles/side-bar.css);
 @import url(./components-styles/form.css);
 @import url(./components-styles/button.css);
-@import url(./components-styles/textnav.css);
 @import url(./components-styles/modal.css);
 
 :root {
-    --primary-color : #DC2626;
+    --primary-color : #CC504F;
+    --secondary-color : #EFEFEF;
 }
 
 body {
@@ -32,9 +32,16 @@ a{
     color: black;
 }
 #description{
-    margin: 0px;
+    margin: 8px;
     font-size: 18px;
     resize: none;
+    border:none;
+    line-height: normal;
+    animation: blink 1s infinite;
+}
+
+#date {
+    border: none;
 }
 .logo-text {
     color: var(--primary-color); 
@@ -57,8 +64,8 @@ a{
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-top: 2rem; /* 32px */
-    padding-bottom: 2rem; /* 32px */
+    padding-top: 32px; 
+    padding-bottom: 32px; 
 }
 
 .welcome__text {
@@ -72,21 +79,22 @@ a{
     max-width: 1024px;
     display: flex;
     text-align: left;
-    padding-top: 1.25rem;
+    padding-top: 20px;
     align-self: flex-start;
     padding-left: 16px;
 }
+
 .overview__text {
-    font-size: 1.875rem; /* 30px */
+    font-size: 30px;
     font-weight: 700;
-    margin-left: 0.25rem; /* 4px */
-    margin-right: 0.25rem; /* 4px */
+    margin-left: 4px;
+    margin-right: 4px;
 }
 
 .container-notebtn{
     display: flex;
     justify-content: flex-end;
-    padding-top: 0.5rem;
+    padding: 8px;
 }
 
 .group-container {
@@ -100,7 +108,7 @@ a{
     width: 400px;
     height: 400px;
     display: none;
-    padding-right: 5rem;
+    padding-right: 80px;
 }
 @media (min-width : 1440px) {
     .image-container{
@@ -112,7 +120,7 @@ a{
     width: 400px;
     height: 400px;
     object-fit: cover;
-    border-radius: 4rem;
+    border-radius: 64px;
     box-shadow: 4px 4px;
 }
 

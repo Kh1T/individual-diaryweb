@@ -1,10 +1,18 @@
 // js/list.js
 import { getNotes } from "./components/noteManager.js";
 
+
+/**
+ * @constant {HTMLElement} noteContainer - The container element where the notes will be rendered.
+ */
 const noteContainer = document.querySelector("#note-container");
 
-
-export function renderNotesList() {
+/**
+ * Renders the list of notes in the UI.
+ * It retrieves the notes, reverses the order to show the latest notes first,
+ * truncates their descriptions, and appends them to the note container.
+ */
+function renderNotesList() {
   noteContainer.innerHTML = "";
   const notes = getNotes().reverse(); // Show latest notes first
   notes.forEach((note) => {
@@ -17,10 +25,17 @@ export function renderNotesList() {
                 <p class="note__description">${truncatedDescription}</p>
             </div>
         </div>
-        `;
+    `;
   });
 }
 
+/**
+ * Truncates a given description to a specified word limit.
+ *
+ * @param {string} description - The description to truncate.
+ * @param {number} wordLimit - The maximum number of words to include in the truncated description.
+ * @returns {string} The truncated description followed by an ellipsis if it exceeds the word limit.
+ */
 function truncateDescription(description, wordLimit) {
   const words = description.split(" ");
   return words.length > wordLimit

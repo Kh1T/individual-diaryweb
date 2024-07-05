@@ -25,6 +25,25 @@
     font-weight: 600;
 }
 
-#edit-form div > button {
-    padding: 8px 32px;
+#edit-form div  {
+    padding: 8px 16px;
+}
+
+.note__save {
+    border-width: 2px;
+    border-radius: 24px;
+    border-color: solid black;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 24px;
+}
+
+.note__cancel {
+  border-width: 2px;
+  border-radius: 24px;
+  border-color: solid black;
+  padding: 8px 16px;
+  font-weight: bold;
+  background: none;
 }

@@ -1,6 +1,6 @@
 
 import { renderNotes } from './components/uiManager.js';
-import { addNote, deleteNote, editNote, loadNotes, getNotes } from './components/noteManager.js';
+import { addNote, deleteNote, editNote, loadNotes, getNotes , scrollToTop} from './components/noteManager.js';
 import { showModal } from './components/modal.js';
 
 /**
@@ -17,7 +17,7 @@ const titleInput = noteForm.querySelector(".note__title");
 const dateInput = noteForm.querySelector(".note__date");
 const descriptionInput = noteForm.querySelector(".note__description");
 const createNote = document.querySelector("#create-note");
-const addButton = document.querySelector("#add-button");
+
 const noteContainer = document.querySelector("#note-container");
 
 const notes = getNotes().reverse(); 
@@ -95,7 +95,6 @@ const page = body.getAttribute("data-page");
 function changeStyle() {
 
     const createNote = document.getElementById("create-note");
-    const noteWrapper = document.querySelectorAll(".note__wrapper")
 
     if (page !== "Home") {
         createNote.style.display = "none";
@@ -106,28 +105,14 @@ function changeStyle() {
     
 }
 
-function updateBreadcrumb() {
-  const breadcrumb = document.querySelector(".textnav-container p");
-
-  if (breadcrumb) {
-    let breadcrumbText = `<a href="../index.html">Home</a>`; // Default text with a link to Home
-
-    // Update breadcrumb text based on the page type
-    const body = document.querySelector("body");
-    const page = body.getAttribute("data-page");
-
-    if (page && page !== "Home") {
-      breadcrumbText += ` > ${page}`;
-    }
-    // Set the breadcrumb text
-    breadcrumb.innerHTML = breadcrumbText;
-  } 
-}
-
-
 changeStyle();
-updateBreadcrumb();
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const menuIcon = document.querySelector(".menu");
+  if (menuIcon) {
+    menuIcon.addEventListener("click", scrollToTop);
+  }
+});
 
 

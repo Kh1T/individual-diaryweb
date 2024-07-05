@@ -4,7 +4,7 @@
     height: 60px;
     background-color: #fca5a5;
     align-items: center;
-    
+    border: 2px solid black;
 }
 .header__text {
     margin-left: 8px;
@@ -14,5 +14,5 @@
     height: 40px;
     width: 40px;
     background-color: gray;
-    border-radius: 0.25rem;
+    border-radius: 4px;
 }

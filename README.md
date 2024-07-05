@@ -1,6 +1,6 @@
 # Note Diary Web Application
 
-The Note Web Project is a web application built entirely with vanilla JavaScript, HTML, and CSS. It allows users to create, read, update, and delete notes. The project focuses on providing a simple yet effective interface for managing personal notes.
+The Note Web Project is a web application built entirely with vanilla JavaScript, HTML, and CSS. It allows users to create, read, update, and delete notes. The project focuses on providing a simple yet effective interface for managing personal notes.Moreover improve the developer undestanding about the CRUD.
 
 Key Features :
 - Create Note: Users can add new notes with a title, date, and description.
@@ -8,20 +8,31 @@ Key Features :
 - Update Note: Modify the content of existing notes.
 - Delete Note: Remove notes that are no longer needed.
 
-> Diary-Web <a href="index.html">Click Here</a>.
+> Diary-Web <a href="https://diary-web-khit.netlify.app/index.html">Click Here</a>.
 
-This project is 
+
 ## Description
 The Note Diary Web Application is a simple and intuitive tool for creating, editing, and managing personal notes. Users can add, view, and delete notes seamlessly.
 
 ## Table of Contents
-- [Installation](#installation)
+- [Technology Used](#technology-used)
+- [Contributors](#contributors)
 - [Usage](#usage)
 - [Folder Structure](#folder-structure)
 - [Acknowledgments](#acknowledgments)
-- [Contact](#contact)
 
-## Installation
+## Technology Used
+| **Technologies** | **Purpose** |
+|------------------|------------------|
+| HTML             | Structure and Create content for the pages |
+| CSS              | Styling HTML elements and layout |
+| JavaScript       | Use to make the website behaviour |
+
+## Contributors
+- Developer : Khom Khit
+- Code Reviewer : Team Alphabeez members
+
+## Usage
 
 ### Prerequisites
 - A text editor or Integrated Development Environment (IDE) for viewing the project:
@@ -38,26 +49,41 @@ The Note Diary Web Application is a simple and intuitive tool for creating, edit
     cd note-diary-web
     ```
 
-## Usage
+## Folder Structure
 
 ### Running the Project
 To start the development server, run:
 ```bash
-npm start
-
-## Folder Structure
-note-diary-web/
-│
-├── assets/            # Images and other assets
-│   ├── images/        # Website images
-│   │   └── pic-1.png  # Example image
-│   └── logo/          # Website logos (hamburger, info, etc.)
-│       ├── hamburger-logo.png
-│       ├── info-logo.png
-│       └── logo.png
-│
-├── styles/                # CSS files
-│   ├── components-style/  # Styles for reusable components
+DIARY-WEB-PROJECT/
+├── assets/
+│   ├── images/
+│   │   ├── GIT_FLOW_STRATEGY.png
+│   │   └── logo/
+│   │       ├── hamberger-logo.png
+│   │       ├── info-logo.png
+│   │       └── logo.png
+├── pages/
+│   ├── create.html
+│   ├── edit.html
+│   ├── list.html
+│   └── view&delete.html
+├── scripts/
+│   ├── components/
+│   │   ├── footer.js
+│   │   ├── header.js
+│   │   ├── modal.js
+│   │   ├── noteManager.js
+│   │   ├── sidebar.js
+│   │   └── uiManager.js
+│   ├── pages-js/
+│   │   ├── create.js
+│   │   ├── edit.js
+│   │   └── view-and-del.js
+│   ├── index.js
+│   ├── list.js
+│   └── script.js
+├── styles/
+│   ├── components-styles/
 │   │   ├── button.css
 │   │   ├── footer.css
 │   │   ├── form.css
@@ -65,101 +91,56 @@ note-diary-web/
 │   │   ├── modal.css
 │   │   ├── note.css
 │   │   ├── side-bar.css
-│   │   └── textnav.css
-│   └── pages-style/       # Styles for specific webpages
-│       ├── create.css     # Styles for create note page
-│       ├── edit.css       # Styles for edit note page (not mentioned before)
-│       ├── list.css       # Styles for list notes page
-│       └── view-and-del.css  # Styles for view and delete note page (not mentioned before)
-│
-├── scripts/               # JavaScript files
-│   ├── components/        # JS for reusable components
-│   │   ├── footer.js
-│   │   ├── header.js
-│   │   ├── noteManager.js  # Note management logic
-│   │   ├── sidebar.js     # Sidebar functionality
-│   │   └── uiManager.js   # UI management functions
-│   ├── pages-js/          # JS specific to webpages
-│   │   ├── create.js      # JS functionalities for create page
-│   │   ├── edit.js        # JS functionalities for edit page (not mentioned before)
-│   │   ├── index.js       # JS functionalities for main page (not mentioned before)
-│   │   └── list.js        # JS functionalities for list page
-│   └── script.js          # Common JS functionalities used across pages
-│
-├── index.html             # Home page
-└── README.md              # Project README file
+│   ├── pages-styles/
+│   │   ├── create.css
+│   │   ├── edit.css
+│   │   ├── list.css
+│   │   └── view-and-del.css
+│   └── style.css
+├── .reviewboardrc
+├── index.html
+└── README.md
 
+```
 ## Pages Included
 
 | Page Names |
 |------------|
-| <a href="">Home</a>        |
-| <a href="">List</a>       |
-| <a href="">Create</a>         |
-| <a href="">View & Delete</a>         |
-| <a href="">Edit</a>       |
-
+| <a href="https://diary-web-khit.netlify.app/index.html">Home</a>        |
+| <a href="https://diary-web-khit.netlify.app/pages/list.html">List</a>       |
+| <a href="https://diary-web-khit.netlify.app/pages/create.html">Create</a>         |
+| <a href="https://diary-web-khit.netlify.app/pages/view&delete.html">View & Delete</a>         |
+| <a href="https://diary-web-khit.netlify.app/pages/edit.html">Edit</a>       |
 
 ### Features
-Features
-a. Create Notes
+
+#### a. Create Notes
     1. Go to the "Create Note" page.
     2. Fill in the note title, date, and description in the form.
     3. Click the "Add Note" button to save the note.
-b. View Notes
-    1. Navigate to the home page to see a list of all notes.
-    2. Click on a note to view its details.
-c. Edit Notes
-    1. In the list of notes, click the "Edit" button next to the note you want to edit.
+#### b. View Notes
+    1. Navigate to the list page to see a list of all notes.
+    or Can sroll down in the home pages and down the note form to see the overview of all the notes.
+#### c. Edit Notes
+    1. In the popup modal that will show after click on the note , if user decide to click the "Edit" button will lead to edit page.
     2. Update the title, date, and description in the form.
-    3. Click "Save Changes" to update the note.
-d. Delete Notes
-    1. In the list of notes, click the "Delete" button next to the note you want to remove.
+    3. Click "Add" to update the note.
+#### d. Delete Notes
+    1. In the list of notes, click the "Delete" button in the note you want to remove.
     2. Confirm the deletion in the popup modal.
+    or 
+    1. Click on the note.
+    2. When the modal popup click on the View&Delete.
+    3. click on delete note.
 
 
-## Technology Used
-| **Technologies** | **Purpose** |
-|------------------|------------------|
-| HTML             | Structure and Create content for the pages |
-| CSS              | Styling HTML elements and layout |
-| JavaScript       | Use to make the website behaviour |
 
 ## Git Strategy & Scenario
 
-![GIT_FLOW_STRATEGY](./assets/images//GIT_FLOW_STRATEGY.png)
+![GIT_FLOW_STRATEGY](assets/images/GIT_FLOW_STRATEGY.png)
 
-Implementation:
-
-
-Feature Branches:
-
-
-Feature 1: Create a feature branch to implement Pound to Kg conversion.
-Feature 2: Implement Fahrenheit to Celsius conversion.
-Feature 3: Develop Mile to Kilometer conversion.
-
-
-Release Branch:
-
-
-Prepare the codebase for release, ensuring all features are thoroughly tested and stable.
-Tag the release with the version number (e.g., 1.0).
-
-
-Bug fix Branch:
-
-
-Create a bug fix branch to address any identified issues, such as adding missing headings.
-
-
-Hotfix Branch:
-
-
-If a critical issue arises post-release (e.g., grammatical errors), immediately create a hotfix branch for resolution.
-
-—--
-
+## Implementation:
+---
 Feature Branch:
 
 
@@ -198,7 +179,7 @@ Hotfix Branch:
 4. Merge/Rebase: Merge or rebase the hotfix branch with the main and develop branches.
 5. Finish Branch: Use the command git flow hotfix finish <version_number>.
 
-## Acknowledgement 
+## Acknowledgments
 
 Thanks to team Alphabeez members for helping to give feedbacks and review code for this Project.
 

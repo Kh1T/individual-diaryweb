@@ -13,13 +13,15 @@
     <div class="main-container">
         <div data-container="sidebar" data-page="Create"></div>
         <div class="form-container">
-            
                 <h1>Creating Note: </h1>
                 <form id="note-form" class="note__form">
                     <input class="note__title" id="title" placeholder="Title..." required>
                     <input class="note__date" id="date" type="date" required>
                     <textarea class="note__description" id="description" placeholder="Add description..." required></textarea>
-                    <input class="btn-addnote" type="submit" value="Add Note">
+                    <div>
+                        <input class="btn-addnote" type="submit" value="Add Note">
+                        <button class="btn-cancel"> Cancel</button>
+                    </div>
                 </form>
 
             </div>

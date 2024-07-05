@@ -30,17 +30,3 @@ if (infoButton && infoText) {
     }
   });
 } 
-
-        // document.addEventListener("DOMContentLoaded", function () {
-        //   const menuIcon = document.querySelector(".menu");
-        //   const sidebar = document.querySelector(".group__sidebar");
-        //   const mediaQuery = window.matchMedia("(max-width: 767px)");
-
-        //   function toggleSidebar() {
-        //     if (mediaQuery.matches) {
-        //       sidebar.classList.toggle("sidebar-visible");
-        //     }
-        //   }
-
-        //   menuIcon.addEventListener("click", toggleSidebar);
-        // });
